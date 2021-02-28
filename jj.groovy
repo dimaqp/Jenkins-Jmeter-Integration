@@ -14,6 +14,7 @@ pipeline {
                    mkdir "C:\\Program Files (x86)\\Jenkins\\jobs\\JJ\\%BUILD_NUMBER%\\archive\\TC1_Select a product from category"
                    xcopy "C:\\jMeter-Jenkins\\apache-jmeter-5.2.1\\bin\\Execution_resultsTC1\\HTML-Report\\" "C:\\Program Files (x86)\\Jenkins\\jobs\\JJ\\builds\\%BUILD_NUMBER%\\\\archive\\TC1_Select a product from category" /E /H /C /I
                     """
+                perfReport "C:\\jMeter-Jenkins\\apache-jmeter-5.2.1\\bin\\Execution_resultsTC1\\TestData.jtl"
             }
         }
 
@@ -35,10 +36,5 @@ pipeline {
 //                }
 //            }
 //        }
-    }
-    post {
-        always {
-            archiveArtifacts artifacts: 'C:\\Program Files (x86)\\Jenkins\\jobs\\JJ\\builds\\13\\archive\\*', onlyIfSuccessful: true
-        }
     }
 }
