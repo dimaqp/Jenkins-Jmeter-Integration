@@ -1,5 +1,5 @@
 #!groovy
-peline {
+pipeline {
     agent any
     stages {
 //        stage('Prepare output folder ') {
